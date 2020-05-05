@@ -1,4 +1,4 @@
-# Your project name (code repository)
+# ROSE dashboard
 
 
 <!--- example of figure
@@ -8,12 +8,6 @@
 ![example.png](<./docs/images/example.png>)
 
 ```text
-Export this project :
-Settings->General->Advanced(Expand): Export project
-(saves a .tar.gz)
-
-Import the project:
-Projects->New project->Import project
-(provide the .tar.gz)
+Welcome to ROSE dashboard
 ```
 
