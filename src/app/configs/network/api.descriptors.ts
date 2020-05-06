@@ -1,5 +1,3 @@
-
-
 export interface LoginDescriptorInterface {
     token_type: string;
     expired_in: string;
