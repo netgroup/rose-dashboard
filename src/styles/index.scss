@@ -1,0 +1,58 @@
+@import "~bootstrap/scss/bootstrap.scss";
+
+@import "sizings";
+@import "colors";
+@import "typography";
+@import "mixins";
+@import "forms";
+@import "overrides";
+
+body {
+    background-color: $color-background;
+    font-size: 15px;
+}
+
+table {
+    thead {
+        td {
+            font-family: Brown-Medium, sans-serif;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+        }
+    }
+
+    tbody {
+        tr {
+            border-bottom: 1px solid #f1f1f1;
+        }
+    }
+}
+
+a {
+    color: $color-primary;
+
+    &:visited,
+    &:hover,
+    &:active {
+        color: $color-primary
+    }
+}
+
+.no-outline {
+    outline: none;
+    box-shadow: none;
+
+    &:hover,
+    &:active {
+        box-shadow: none;
+    }
+}
+
+.spinner-border {
+    width: 20px;
+    height: 20px;
+    border-width: 2px;
+    border-color: $color-primary;
+    border-right-color: transparent;
+}

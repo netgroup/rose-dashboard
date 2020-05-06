@@ -1,0 +1,31 @@
+@import "index";
+
+.container-fluid {
+    .row {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+
+        #recover-container {
+            max-width: 400px;
+        }
+    }
+}
+
+.headings {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0 20px 0;
+
+    h1.title {
+        font-family: Brown-Regular, sans-serif;
+        font-size: 28px;
+        letter-spacing: .2px;
+    }
+
+    h2.subtitle {
+        font-weight: 300;
+        font-size: 15px;
+        letter-spacing: .3px;
+    }
+}

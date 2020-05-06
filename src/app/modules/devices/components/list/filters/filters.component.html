@@ -1,0 +1,45 @@
+<div id="actions" class="row mb-3" *showItBootstrap="['xs', 'sm']">
+    <div class="col-6 pl-0 py-2 text-left" (click)="filters.visible = !filters.visible">
+        <span class="action">{{ 'devices.list.actions.filter' | translate }}</span>
+    </div>
+<!--     <div class="col-6 pr-0 py-2 text-right" routerLink="/devices/create">
+        <span class="action">{{ 'devices.list.actions.create' | translate }}</span>
+    </div> -->
+</div>
+
+<form class="w-100">
+    <div id="filters" class="row form-group align-items-center mt-0" [hidden]="!filters.visible">
+        <div id="search" class="col-12 col-md-5 col-xl-4 d-flex flex-column px-0 mb-2 mb-md-0">
+            <ng-container *ngTemplateOutlet="search; context:{ key: 'term', hint: 'devices.list.filters.fields.term.placeholder' | translate }"></ng-container>
+        </div>
+         <!--
+        <div id="type" class="col-12 col-md-3 d-flex flex-column px-0 mb-2 pl-md-3 pr-md-3 mb-md-0">
+            <ng-container *ngTemplateOutlet="option; context:{ key: 'type', hint: 'devices.list.filters.fields.type.placeholder' | translate, options: filterOptionsDescriptors.type }"></ng-container>
+        </div>
+
+        <app-button class="ml-auto" *hideItBootstrap="['xs', 'sm']" [title]="'devices.list.filters.action.create' | translate" [routerLink]="['./create']"></app-button> -->
+    </div>
+</form>
+
+<ng-template #search let-filterKey="key" let-hintText="hint">
+    <div class="search input-group">
+        <input type="text" autocomplete="off" 
+               class="form-control"
+               [placeholder]="hintText"
+               (keyup)="filters.subject.next({ key: filterKey, value: $event.target['value'] })">
+
+        <div class="input-group-append">
+            <i class="mdi mdi-magnify" *ngIf="!loading.term"></i>
+            <i class="mdi mdi-loading" *ngIf="loading.term"></i>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #option let-filterKey="key" let-hintText="hint" let-selected="default" let-options="options">
+    <select class="option form-control" (change)="filters.subject.next({ key: filterKey, value: $event.target['value'] })">
+        <option value="" selected>{{ hintText }}</option>
+        <option *ngFor="let option of options" [value]="option.value">{{ option.title }}</option>
+    </select>
+</ng-template>
+
+

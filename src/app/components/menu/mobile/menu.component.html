@@ -1,0 +1,25 @@
+<div id="mobile-menu" class="row w-100 m-0">
+    <div id="header" class="col-12 mt-2">
+        <div>
+            <div id="avatar" [style.backgroundImage]="(operator | async)?.avatar | asBackgroundUrl"></div>
+        </div>
+        <div class="d-flex flex-column align-items-center mt-4">
+            <span class="fullname">ROSE experiment manager</span>
+            <span class="role">Tenant: ROSE</span>
+        </div>
+    </div>
+    <div id="menu" class="col-12 mt-4 pt-4">
+        <div class="menu-item no-outline" routerLink="/dashboard">
+            <i class="mdi mdi-view-dashboard-outline  ml-4 ml-xl-5"></i>
+            <span class="title">{{ 'layout.menu.dashboard' | translate }}</span>
+        </div>
+        <div class="menu-item no-outline" routerLink="/devices">
+            <i class="mdi mdi-network-router ml-4 ml-xl-5"></i>
+            <span class="title">{{ 'layout.menu.devices' | translate }}</span>
+        </div>
+        <div class="menu-item no-outline" routerLink="/auth/signout" routerLinkActive="active">
+            <i class="mdi mdi-exit-to-app ml-4 ml-xl-5"></i>
+            <span class="title">{{ 'layout.menu.signout' | translate }}</span>
+        </div>
+    </div>
+</div>

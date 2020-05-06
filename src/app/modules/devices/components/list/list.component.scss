@@ -1,0 +1,96 @@
+@import "index";
+
+$columns-x-padding: 25px;
+
+#devices {
+    thead,
+    tbody {
+        th,
+        tr {
+            @include transition(200ms);
+
+            &:hover {
+                background-color: #fbfbfb;
+            }
+
+            &:last-child {
+                border-bottom: 0;
+            }
+
+            td {
+                padding-top: 10px;
+                padding-bottom: 10px;
+
+                 &:nth-child(1) {
+                    max-width: 200px;
+                    min-width: 100px;
+                    padding-left: $columns-x-padding;
+                    padding-right: $columns-x-padding;
+                }
+
+
+                &:nth-child(10) {
+                    text-align: right;
+                    padding-right: $columns-x-padding;
+
+                    .action-item {
+                        cursor: pointer;
+                        border: 1px solid lightgrey;
+                        padding: 8px 17px;
+                        border-radius: 3px;
+                        font-size: 14px;
+                        font-family: Brown-Regular, sans-serif;
+                        color: #666666;
+
+                        @include transition(200ms);
+
+                        &:hover {
+                            color: #333333;
+                            border-color: $color-button-state-enabled-background;
+                        }
+
+                        &#dropdown {
+                            background-color: transparent;
+                        }
+                    }
+                }
+
+                .role {
+                    .dot {
+                        display: inline-block;
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                    }
+
+                    .text {
+                        cursor: default;
+                        margin-left: 10px;
+                        letter-spacing: 0.5px;
+                        //
+                        font-family: Brown-Regular, sans-serif;
+                        font-size: 12px;
+                        font-weight: 500;
+                        color: #5a5757;
+
+                        .upper {
+                            text-transform: uppercase;
+                        }
+                    }
+
+                    &.admin {
+                        .dot {
+                            background-color: $color-tag-roles-admin-dot;
+                        }
+                    }
+
+                    &.device {
+                        .dot {
+                            background-color: $color-tag-roles-operator-dot;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

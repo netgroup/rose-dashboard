@@ -1,0 +1,126 @@
+form {
+    label {
+        font-family: Brown-Regular, sans-serif;
+        font-size: 16px;
+        color: #363636;
+    }
+
+    select,
+    input,
+    textarea {
+        padding: 10px 12px;
+        border-radius: 2px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: $color-input-border;
+        line-height: 15px;
+        font-size: 15px;
+        -webkit-appearance:none;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+
+        @include input-placeholder();
+    }
+
+    select,
+    input {
+        height: 42px;
+    }
+
+    select {
+        -webkit-appearance: none;
+    }
+
+    input.ng-dirty.ng-touched.ng-invalid::ng-deep,
+    textarea.ng-dirty.ng-touched.ng-invalid::ng-deep {
+        border-color: $color-input-error !important;
+    }
+
+    international-phone-number::ng-deep {
+        .input-group {
+            border-radius: 2px !important;
+            border: 1px solid $color-input-border !important;
+        }
+
+        a.list-group-item {
+            border-radius: 0 !important;
+            padding: 6px 16px !important;
+        }
+
+        input,
+        button {
+            height: 42px !important;
+            border-width: 0 !important;
+            padding-top: 0.3rem !important;
+            padding-bottom: 0.3rem !important;
+
+            -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+
+            &:focus {
+                outline: none !important;
+                box-shadow: none;
+            }
+        }
+
+        input {
+            padding-left: 5px;
+        }
+    }
+
+    international-phone-number.ng-dirty.ng-touched.ng-invalid::ng-deep {
+        .input-group {
+            border: 1px solid rgba(232, 69, 62, 0.7) !important;
+        }
+    }
+
+    .input-group {
+        input {
+            box-sizing: border-box;
+            transition: border 0s;
+        }
+
+        input:not(:only-child) {
+            border-right-color: transparent;
+        }
+
+        .input-group-append {
+            border: 1px solid $color-input-border;
+            background-color: white;
+            margin-left: -2px;
+            border-radius: 2px;
+
+            i {
+                align-self: center;
+                -webkit-align-self: center;
+                margin-right: 10px;
+                margin-left: 10px;
+            }
+
+            .mdi-check {
+                align-self: center;
+                color: limegreen;
+                font-size: 17px;
+                line-height: 17px;
+            }
+
+            .mdi-close {
+                color: #ce0000;
+                font-size: 17px;
+                line-height: 17px;
+            }
+        }
+    }
+
+    small.error {
+        margin-top: 5px;
+        color: $color-input-error;
+        opacity: 0;
+        height: 18px;
+        display: block;
+
+        &.invalid {
+            opacity: 1;
+        }
+    }
+}

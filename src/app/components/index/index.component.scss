@@ -1,0 +1,10 @@
+@import "index";
+
+#content {
+    min-height: 100vh;
+
+    @include extra-space-for-navigation-bar();
+    @include media-breakpoint-down(md) {
+        padding-bottom: $tabbar-xs-height;
+    }
+}

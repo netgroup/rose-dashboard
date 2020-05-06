@@ -1,0 +1,102 @@
+@import "index";
+
+button {
+    display: block;
+    padding: 0 20px;
+    height: 44px;
+    border: 0;
+    color: white;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative;
+    animation: all 250ms ease-in-out;
+    border-radius: 2px;
+    font-family: Brown-Regular, sans-serif;
+    letter-spacing: 0.6px;
+    font-weight: 400;
+    font-size: 14px;
+
+    @include media-breakpoint-down(sm) {
+        height: 44px;
+    }
+
+    &.loading {
+        background-color: $color-button-state-enabled-background !important;
+        color: $color-button-state-enabled;
+        cursor: default !important;
+    }
+
+    &.disabled {
+        background-color: $color-button-state-disabled-background !important;
+        color: $color-button-state-disabled;
+        cursor: default !important;
+    }
+
+    &.filled {
+        background-color: $color-button-state-enabled-background;
+        color: $color-button-state-enabled;
+
+        @include transition(250ms);
+
+        &.active:hover {
+            @include box-shadow(10px, 0, 0, #cbcfd2);
+        }
+    }
+
+    &.empty {
+        border: 1px solid $color-empty-button-state-enabled-background !important;
+        color: $color-empty-button-state-enabled-background !important;
+        background-color: transparent;
+        padding: 0 20px;
+
+        &.disabled {
+            background-color: $color-empty-button-state-disabled-background !important;
+            border: 1px solid $color-empty-button-state-disabled-color !important;
+            color: $color-empty-button-state-disabled-color !important;
+            cursor: default !important;
+        }
+
+        &.loading {
+            color: white !important;
+        }
+    }
+
+    &.clear {
+        color: $color-empty-button-state-enabled-background !important;
+        background-color: transparent;
+        padding: 0 20px;
+        border: 0 !important;
+    }
+
+    &:active {
+        outline: none;
+        border: none;
+    }
+
+    &:focus {
+        outline:0;
+    }
+
+    #button-loader {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+
+        i {
+            margin: 0 20px;
+            font-size: 25px;
+            -webkit-animation: spin 1s linear infinite;
+            -moz-animation: spin 1s linear infinite;
+            animation: spin 1s linear infinite;
+        }
+
+        span {
+            margin-left: 7px;
+        }
+    }
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }

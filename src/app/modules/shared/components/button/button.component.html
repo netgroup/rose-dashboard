@@ -1,0 +1,15 @@
+<button
+    [class.filled]="buttonBaseClass === 'filled'"
+    [class.active]="buttonClass === 'active'"
+    [class.disabled]="buttonClass === 'disabled'"
+    [class.loading]="buttonClass === 'loading'"
+    [class.empty]="buttonBaseClass === 'empty'"
+    [class.clear]="buttonBaseClass === 'clear'"
+
+    #button>
+
+    <span id="button-title" *ngIf="buttonClass !== 'loading'" [innerHTML]="buttonTitle"></span>
+    <div id="button-loader" *ngIf="buttonClass === 'loading'">
+        <i class="mdi mdi-loading"></i>
+    </div>
+</button>

@@ -1,0 +1,33 @@
+@import "index";
+
+.breadcrumb {
+    background: none;
+    font-family: Brown-Bold, sans-serif;
+    color: $color-breadcrumb-text;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 0;
+    letter-spacing: 0.2px;
+
+    a:hover,
+    span:hover {
+      color: $color-breadcrumb-text-selected;
+      text-decoration: none;
+    }
+    li {
+      list-style: none;
+      float: left;
+      margin: 5px;
+    }
+    li:last-child {
+      margin-right: 20px;
+      color: $color-breadcrumb-text-selected;
+    }
+    li::after {
+      content: "//";
+      color: $color-breadcrumb-separator;
+    }
+    li:last-child::after {
+      content: "";
+    }
+  }

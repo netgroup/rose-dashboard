@@ -1,0 +1,17 @@
+@import "index";
+
+.container-fluid {
+    .row {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+
+        #signin-container {
+            max-width: 400px;
+
+            #recover-password {
+                font-size: 14px;
+            }
+        }
+    }
+}

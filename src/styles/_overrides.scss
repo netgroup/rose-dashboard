@@ -1,0 +1,46 @@
+.modal-dialog {
+    @include media-breakpoint-down(sm) {
+        &.modal-dialog-centered {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+
+    .modal-content {
+        border: 0 !important;
+        border-radius: 1px !important;
+
+        .modal-header {
+            padding: 30px 30px 10px 30px !important;
+            border-radius: 0 !important;
+        }
+
+        .modal-body {
+            padding: 10px 30px !important;
+        }
+
+        .modal-footer {
+            padding: 20px 30px !important;
+            border-radius: 0 !important;
+        }
+    }
+}
+
+.dropdown-menu {
+    border-radius: 1px;
+    border: 1px solid #f1eded;
+
+    @include box-shadow(10px);
+
+    .dropdown-item {
+        font-size: 14px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+}
+
+.flag-va {
+    background-position:-144px -66px !important;
+}

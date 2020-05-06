@@ -1,0 +1,55 @@
+@import "index";
+
+footer {
+    @include media-breakpoint-down(sm) {
+        min-width: 100%;
+        max-width: 100%;
+        position: fixed;
+        bottom: 0;
+        background-color: white;
+        box-shadow: 0 0 5px #E8E8E8;
+        z-index: 1039;
+    }
+
+    .row {
+        .col {
+            padding-left: 0;
+            padding-right: 0;
+            height: $tabbar-xs-icon-size;
+            text-align: center;
+            outline: none;
+
+            i {
+                line-height: 19px;
+                font-size: 25px;
+                color: $color-tabmenu-icon-color;
+            }
+
+            svg-icon.tab-icon {
+                width: 23px;
+                height: 23px;
+                fill: $color-tabmenu-icon-color;
+            }
+
+            span.tab-title {
+                margin-top: 4px;
+                color: $color-tabmenu-icon-color;
+                font-size: 11px;
+            }
+
+            &.active {
+                svg-icon.tab-icon {
+                    fill: $color-primary;
+                }
+
+                i {
+                    color: $color-primary;
+                }
+
+                span.tab-title {
+                    color: $color-primary;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,37 @@
+<div class="notifications-container d-flex flex-column" *hideItBootstrap="['xs']">
+    <div class="notification d-flex" *ngFor="let item of notifications;"
+         [@notification]="item.state"
+         (@notification.done)="onNotificationClosed($event, item.notification)">
+
+        <ng-container>
+            <div class="left-block d-flex align-items-center">
+                <svg-icon class="icon" [src]="item.notification.icon" *ngIf="item.notification.icon"></svg-icon>
+                <svg-icon class="icon" src="/assets/icons/notifications/checked.svg" *ngIf="!item.notification.icon && item.notification.type === types.SUCCESS"></svg-icon>
+                <svg-icon class="icon" src="/assets/icons/notifications/error.svg" *ngIf="!item.notification.icon && item.notification.type === types.ERROR"></svg-icon>
+            </div>
+            <div class="right-block d-flex flex-column justify-content-center pl-3">
+                <div class="title"   [innerHtml]="item.notification.title" *ngIf="item.notification.title !== null"></div>
+                <div class="message" [innerHtml]="item.notification.message"></div>
+            </div>
+        </ng-container>
+    </div>
+</div>
+
+<div class="notifications-container d-flex flex-column" *showItBootstrap="['xs']">
+    <div class="notification d-flex" *ngFor="let item of notifications;"
+         [@mobile-notification]="item.state"
+         (@mobile-notification.done)="onNotificationClosed($event, item.notification)">
+
+        <ng-container>
+            <div class="left-block d-flex align-items-center">
+                <svg-icon class="icon" [src]="item.notification.icon" *ngIf="item.notification.icon"></svg-icon>
+                <svg-icon class="icon" src="/assets/icons/notifications/checked.svg" *ngIf="!item.notification.icon && item.notification.type === types.SUCCESS"></svg-icon>
+                <svg-icon class="icon" src="/assets/icons/notifications/error.svg" *ngIf="!item.notification.icon && item.notification.type === types.ERROR"></svg-icon>
+            </div>
+            <div class="right-block col d-flex flex-column justify-content-center">
+                <div class="title"   [innerHtml]="item.notification.title" *ngIf="item.notification.title !== null"></div>
+                <div class="message" [innerHtml]="item.notification.message"></div>
+            </div>
+        </ng-container>
+    </div>
+</div>

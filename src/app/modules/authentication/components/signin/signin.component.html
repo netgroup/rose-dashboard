@@ -1,0 +1,27 @@
+<div class="container-fluid d-flex align-items-center mvh-100 px-0">
+    <div class="row">
+        <div class="col-12">
+            <div id="signin-container" class="form-group mx-auto p-4">
+                <img class="w-100 mb-3" src="/assets/images/rose-logo-recolored-red-200x60.png" alt="Logo Rose">
+                <form class="w-100 d-flex flex-column" [formGroup]="form">
+
+                    <label for="username">{{ 'auth.signin.fields.username.label' | translate }}</label>
+                    <input type="text" autocomplete="off"  id="username" formControlName="username"
+                           [placeholder]="'auth.signin.fields.username.placeholder' | translate">
+                    <small class="error" invalidControlCheck="username">{{ form.get('username').errors | serializeErrors:'errors.validations' }}</small>
+
+                    <label for="password">{{ 'auth.signin.fields.password.label' | translate }}</label>
+                    <input type="password" id="password" formControlName="password"
+                           [placeholder]="'auth.signin.fields.password.placeholder' | translate">
+                    <small class="error" invalidControlCheck="password">{{ form.get('password').errors | serializeErrors:'errors.validations.passwords' }}</small>
+
+                    <app-button class="w-100 mt-3"
+                                [title]="'auth.signin.actions.submit' | translate"
+                                [state]="submitState" (click)="onSubmit()"></app-button>
+
+                    <a id="recover-password" href="#" class="text-center mt-4" routerLink="/auth/password/recover">{{ 'auth.signin.actions.recoverPassword' | translate }}</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

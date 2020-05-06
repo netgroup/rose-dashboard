@@ -1,0 +1,94 @@
+@mixin transition($transition...) {
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    -webkit-transition: $transition;
+    transition: $transition;
+}
+
+@mixin input-placeholder() {
+    &::-webkit-input-placeholder {
+        color: $color-form-placeholder;
+        font-weight: 300;
+        text-transform: none;
+    }
+    &:-moz-placeholder {
+        color: $color-form-placeholder;
+        opacity: 1;
+        font-weight: 300;
+        text-transform: none;
+    }
+    &::-moz-placeholder {
+        color: $color-form-placeholder;
+        opacity: 1;
+        font-weight: 300;
+        text-transform: none;
+    }
+    &:-ms-input-placeholder {
+        color: $color-form-placeholder;
+        font-weight: 300;
+        text-transform: none;
+    }
+    &::-ms-input-placeholder {
+        color: $color-form-placeholder;
+        font-weight: 300;
+        text-transform: none;
+    }
+}
+
+@mixin fill-screen-height() {
+    min-height: calc(100vh - #{$navigation-xs-height});
+
+    @include media-breakpoint-up(md) {
+        min-height: calc(100vh - #{$navigation-md-height});
+    }
+}
+
+@mixin box-shadow($amount, $x: 0px, $y: 0px, $color: #e1e4e6) {
+    -webkit-box-shadow: $x $y $amount $color;
+    -moz-box-shadow: $x $y $amount $color;
+    -o-box-shadow: $x $y $amount $color;
+    box-shadow: $x $y $amount $color;
+}
+
+@mixin extra-space-for-navigation-bar() {
+    padding-top: calc(#{$navigation-xs-height} + 20px);
+
+    @include media-breakpoint-up(md) {
+        padding-top: calc(#{$navigation-md-height} + 30px);
+    }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+        .h#{$infix}-auto { height: auto !important; }
+    }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+        .vh#{$infix}-50 { height: 50vh !important; }
+        .vw#{$infix}-50 { width: 50vw !important; }
+    }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+        .vh#{$infix}-100 { height: 100vh !important; }
+        .vw#{$infix}-100 { width: 100vw !important; }
+    }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+        .mvh#{$infix}-100 { min-height: 100vh !important; }
+        .mvw#{$infix}-100 { min-width: 100vw !important; }
+    }
+}

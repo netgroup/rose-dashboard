@@ -1,0 +1,37 @@
+<footer>
+    <div class="container-fluid" *showItBootstrap="['xs', 'sm']">
+        <div class="row">
+            <div class="col d-flex flex-column justify-content-center align-items-center"
+                 routerLink="/"
+                 [class.active]="isLinkActive('/')">
+
+                <i class="mdi mdi-view-dashboard-outline"></i>
+                <span class="tab-title">{{ 'layout.menu.dashboard' | translate }}</span>
+            </div>
+
+            <div class="col d-flex flex-column justify-content-center align-items-center"
+                 routerLink="/operators"
+                 [class.active]="isLinkActive('/operators')" >
+
+                <i class="mdi mdi-account-multiple-outline"></i>
+                <span class="tab-title">{{ 'layout.menu.operators' | translate }}</span>
+            </div>
+
+            <div class="col d-flex flex-column justify-content-center align-items-center"
+                 routerLink="/users"
+                 [class.active]="isLinkActive('/users')">
+
+                <i class="mdi mdi-account-multiple"></i>
+                <span class="tab-title">{{ 'layout.menu.users' | translate }}</span>
+            </div>
+
+            <div class="col d-flex flex-column justify-content-center align-items-center"
+                 routerLink="/settings"
+                 routerLinkActive="active">
+
+                <i class="mdi mdi-menu"></i>
+                <span class="tab-title">{{ 'layout.menu.settings' | translate }}</span>
+            </div>
+        </div>
+    </div>
+</footer>

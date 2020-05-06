@@ -1,0 +1,62 @@
+@import "index";
+
+header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1039;
+    position: fixed;
+
+    .container-fluid {
+        /*
+        @media (min-width: 1200px) {
+            max-width: 1140px;
+        }
+
+        @media (min-width: 1441px) {
+            padding-right: 0;
+            padding-left: 0;
+        }
+        */
+    }
+
+    nav {
+        background-color: white;
+        height: $navigation-xs-height;
+
+        @include media-breakpoint-down(md) {
+            @include box-shadow(10px);
+        }
+
+        @include media-breakpoint-up(md) {
+            height: $navigation-md-height;
+        }
+
+        @include media-breakpoint-up(lg) {
+            background-color: $color-background;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        width: calc(100% - #{$side-menu-md-width});
+        left: $side-menu-md-width;
+    }
+
+    @include media-breakpoint-up(lg) {
+        width: calc(100% - #{$side-menu-lg-width});
+        left: $side-menu-lg-width;
+    }
+
+    @include media-breakpoint-up(xl) {
+        width: calc(100% - #{$side-menu-xl-width});
+        left: $side-menu-xl-width;
+    }
+
+    h1#title {
+        font-family: Brown-Bold, sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 0;
+        letter-spacing: 0.2px;
+    }
+}

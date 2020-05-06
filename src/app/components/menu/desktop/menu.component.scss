@@ -1,0 +1,123 @@
+@import "index";
+
+#side-menu {
+    width: $side-menu-xs-width;
+    background-color: #fbfbfb;
+    border-right: 1px solid #f4f4f4;
+    position: sticky;
+    top: 0;
+    z-index: 1040;
+    min-height: 100vh;
+
+    @include media-breakpoint-up(md) {
+        width: $side-menu-md-width;
+    }
+
+    @include media-breakpoint-up(lg) {
+        width: $side-menu-lg-width;
+    }
+
+    @include media-breakpoint-up(xl) {
+        width: $side-menu-xl-width;
+    }
+
+    #header {
+        cursor: default;
+
+        #avatar {
+            background-color: $color-background;
+            background-size: cover;
+            background-position: center;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 3px solid white;
+
+            @include box-shadow(20px, 0, 0, #c8ccce);
+        }
+
+        .fullname {
+            margin-top: 11px;
+            line-height: 16px;
+            font-family: Brown-Regular, sans-serif;
+            font-weight: 500;
+            font-size: 18px;
+            color: #373737;
+        }
+
+        .role {
+            margin-top: 10px;
+            font-size: 14px;
+            color: $color-gray;
+            font-family: Brown-Regular, sans-serif;
+            letter-spacing: 0.2px;
+        }
+    }
+
+    #menu {
+        border-top: 1px solid #f4f4f4;
+
+        .menu-item {
+            display: flex;
+            height: 50px;
+            align-items: center;
+            cursor: pointer;
+
+            .indicator {
+                width: 3px;
+                height: 100%;
+                background-color: transparent;
+
+                @include transition(250ms);
+            }
+
+            .mdi {
+                font-size: 22px;
+                color: #b7bcc0;
+
+                @include transition(250ms);
+
+                &::before {
+                    margin-top: 2px;
+                }
+            }
+
+            .title {
+                margin-left: 20px;
+                color: $color-menu-item;
+                font-family: Brown-Regular, sans-serif;
+                font-weight: 500;
+                font-size: 17px;
+                letter-spacing: 0.3px;
+
+                @include transition(250ms);
+            }
+
+            &:hover {
+                .title,
+                .mdi {
+                    color: $color-menu-item-selected;
+                }
+            }
+
+            &.active {
+                .indicator {
+                    background-color: $color-primary;
+
+                    @include box-shadow(10px, 0, 0, #e8453e);
+                }
+
+                .mdi {
+                    color: $color-menu-item-selected;
+                }
+
+                .title {
+                    color: $color-menu-item-selected;
+                }
+            }
+        }
+        .dropdown-menu.show{
+            margin-left:68px;
+        }
+    }
+}

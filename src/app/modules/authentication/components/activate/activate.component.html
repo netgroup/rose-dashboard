@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 vh-100 d-flex flex-column align-items-center justify-content-center">
+            <ng-container *ngIf="status === 'activating'">
+                <i class="mdi mdi-loading"></i>
+                <span>Stiamo attivando il tuo account..</span>
+            </ng-container>
+            <ng-container *ngIf="status === 'success'">
+                <i class="mdi mdi-check-circle"></i>
+                <span>Il tuo account è stato attivato con successo</span>
+                <small class="mt-4">Puoi ora accedere usando le tue credenziali</small>
+            </ng-container>
+            <ng-container *ngIf="status === 'error'">
+                <i class="mdi mdi-alert-outline"></i>
+                <span>Si è verificato un errore durante l'attivazione</span>
+                <a href="mailto:">Contatta l'assistenza</a>
+            </ng-container>
+        </div>
+    </div>
+</div>

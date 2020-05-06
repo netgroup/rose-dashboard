@@ -1,0 +1,14 @@
+@import "index";
+
+#actions {
+    font-family: Brown-Regular, sans-serif;
+    color: $color-primary;
+}
+
+#filters {
+    app-button::ng-deep {
+        button {
+            height: 42px !important;
+        }
+    }
+}

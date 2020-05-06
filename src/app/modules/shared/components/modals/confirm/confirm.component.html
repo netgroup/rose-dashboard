@@ -1,0 +1,11 @@
+<div class="modal-header border-0">
+    <h4 class="modal-title">{{ title }}</h4>
+    <button type="button" class="close no-outline" aria-label="Close" (click)="modal.dismiss()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body" [innerHTML]="message"></div>
+<div class="modal-footer border-0 d-flex align-items-end">
+    <app-button class="ml-0" [title]="buttons.dismiss" [state]="states.dismiss" type="clear" (click)="action.emit('dismiss')"></app-button>
+    <app-button class="ml-3" [title]="buttons.confirm" [state]="states.confirm" (click)="action.emit('confirm')"></app-button>
+</div>
