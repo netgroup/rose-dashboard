@@ -4,11 +4,9 @@ export const LayoutLanguagePartialDefinition = {
     },
     menu: {
         dashboard: 'Dashboard',
-        operators: 'Operatori',
-        devices: 'EveryEdge routers',
-        overlayNets: 'Overlay Networks',
-        tenants: 'Tenants',
-        tenantDetails: 'Tenant Details',
+        operators: 'Operators',
+        devices: 'Devices',
+        topology: 'Topology view',
         signout: 'Logout',
         settings: 'Menu'
     }

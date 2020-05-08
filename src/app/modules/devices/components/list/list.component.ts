@@ -59,7 +59,7 @@ export class ListComponent implements OnInit {
                 label: 'Home'
             },
             {
-                label: 'EveryEdges'
+                label: this.translator.instant('devices.list.title')
             }
         ]);
         this.subscription = timer(10000, 10000)

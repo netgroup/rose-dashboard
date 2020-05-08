@@ -2,23 +2,15 @@ export const DashboardLanguagePartialDefinition = {
     view: {
         panel: {
             operators: {
-                total: "Registered Users"
+                total: 'Registered Users'
             },
             devices: {
-                total: "Registered EveryEdges",
-                connected: "Connected EveryEdges",
-                enabled: "Enabled EveryEdges",
-                configured: "Configured EveryEdges"
+                total: 'Devices',
+                router: 'Router',
+                host: 'Host',
             },
-            tenants: {
 
-            },
-            overlays: {
-                total: "Overlay Networks"
-            }
         },
-        
-       
 
     }
 };

@@ -2,7 +2,26 @@
 
 $columns-x-padding: 25px;
 
-#devices {
+#device-details {
+    .text {
+        cursor: default;
+        margin-left: 10px;
+        //letter-spacing: 0.5px;
+        //
+        font-family: Brown-Regular, sans-serif;
+        //font-size: 13px;
+        font-weight: 500;
+        color: #5a5757;
+
+        .upper {
+            text-transform: uppercase;
+        }
+    }
+
+
+}
+
+#devices-interfaces {
     thead,
     tbody {
         th,
@@ -21,15 +40,15 @@ $columns-x-padding: 25px;
                 padding-top: 10px;
                 padding-bottom: 10px;
 
-                // &:nth-child(1) {
-                    max-width: 100px;
+                 &:nth-child(1) {
+                    max-width: 200px;
                     min-width: 100px;
                     padding-left: $columns-x-padding;
                     padding-right: $columns-x-padding;
-               // }
+                }
 
 
-                &:nth-child(5) {
+                &:nth-child(10) {
                     text-align: right;
                     padding-right: $columns-x-padding;
 
@@ -69,7 +88,7 @@ $columns-x-padding: 25px;
                         letter-spacing: 0.5px;
                         //
                         font-family: Brown-Regular, sans-serif;
-                        font-size: 13px;
+                        font-size: 12px;
                         font-weight: 500;
                         color: #5a5757;
 

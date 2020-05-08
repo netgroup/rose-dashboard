@@ -46,49 +46,9 @@
         </div>
         <div class="row">
 
-            <div class="panel col-12 col-md-4 col-xl pl-4 mb-3">
-                <div class="item">
-                    <div class="description">
-                        <div>{{ 'dashboard.view.panel.devices.configured' | translate }}</div>
-                        <div class="description-stats">
-                            <span class="mdi mdi-router-network ">
-                                <span *ngIf="dashboard.devices">{{dashboard.devices.configured }}</span>
-                                <span *ngIf="dashboard.devices.configured === undefined"> -- </span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="panel col-12 col-md-4 col-xl pl-4 mb-3">
-                <div class="item">
-                    <div class="description">
-                        <div>{{ 'dashboard.view.panel.overlays.total' | translate }}</div>
-                        <div class="description-stats">
-                            <span class="mdi mdi-hexagon-slice-2 ">
-                                <span *ngIf="dashboard.overlays">{{dashboard.overlays.total }}</span>
-                                <span *ngIf="dashboard.overlays.total === undefined"> -- </span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="panel col-12 col-md-4 col-xl pl-4 mb-3">
-                <div class="item">
-                    <div class="description">
-                        <div>{{ 'dashboard.view.panel.operators.total' | translate }}</div>
-                        <div class="description-stats">
-                            <span class="mdi  mdi-account">
-                                <span *ngIf="dashboard.operators">{{dashboard.operators.total }}</span>
-                                <span *ngIf="dashboard.operators.total === undefined"> -- </span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
         </div>
 
 
-    </div>
+    </div> 
 </div>

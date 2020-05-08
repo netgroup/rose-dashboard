@@ -1,7 +1,7 @@
 <div id="side-menu" class="d-flex flex-column pt-4" *hideItBootstrap="['xs', 'sm']">
     <div id="header" class="d-flex flex-column align-items-center my-4">
         <div class="position-relative">
-            <div id="avatar" [style.backgroundImage]="(operator | async)?.avatar | asBackgroundUrl"></div>
+            <div id="avatar" [style.backgroundImage]=" '/assets/images/avatar_default.jpg' | asBackgroundUrl"></div>
         </div>
         <div class="d-flex flex-column align-items-center mt-4">
             <!-- <span class="fullname">{{ (operator | async)?.username | capitalize:'words' }}</span> -->
@@ -21,7 +21,11 @@
             <span class="title">{{ 'layout.menu.devices' | translate }}</span>
         </div>
        
-        
+        <div class="menu-item no-outline" routerLink="/topology" [class.active]="isLinkActive('/topology')">
+            <i class="mdi mdi-graphql ml-4 ml-xl-5"></i>
+            <span class="title">{{ 'layout.menu.topology' | translate }}</span>
+        </div>
+
         <div class="menu-item no-outline" routerLink="/auth/signout" routerLinkActive="active">
             <i class="mdi mdi-exit-to-app ml-4 ml-xl-5"></i>
             <span class="title">{{ 'layout.menu.signout' | translate }}</span>

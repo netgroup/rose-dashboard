@@ -22,21 +22,12 @@ export class DevicesFactory {
 
     static createFromDescriptor(descriptor: DeviceDescriptorInterface): Device {
         const duplicateKeys = {
-            id: 'deviceid',
-            type: 'type',
-            name: 'name',
-            description: 'description',
-            mgmtip: 'mgmtip',
-            natType: 'nat_type',
-            interfaces: 'interfaces',
-            features: 'features',
-            registrationTimestamp: 'registration_timestamp',
-            enabled: 'enabled',
-            connected: 'connected',
-            configured: 'configured',
-            tenantid: 'tenantid',
-            tunnelInfo: 'tunnel_info',
-            tunnelMode: 'tunnel_mode'
+            id: '_id',
+            key: '_key',
+            rev: '_rev',
+            extReachability: 'ext_reachability',
+            ipAddress: 'ip_address',
+            type: 'type'
         };
 
         const instance: Device = new Device();

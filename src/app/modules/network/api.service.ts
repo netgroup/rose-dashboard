@@ -19,19 +19,18 @@ export class ApiService {
     public Authentication: any;
     public Operators: any;
     public Devices: any; 
-    public OverlayNets: any; 
+    public Topology: any;
     public Dashboard: any; 
-    public Tenants: any; 
+
 
     constructor(private http: HttpClient) {
         this.url = `${Definitions.servers[0].url}`;
 
         this.Authentication = this.constructApisForGroup('Authentication');
         this.Operators = this.constructApisForGroup('Operators');
+        this.Topology = this.constructApisForGroup('Topology');
         this.Devices = this.constructApisForGroup('Devices');
-        this.OverlayNets = this.constructApisForGroup('Overlays');
         this.Dashboard = this.constructApisForGroup('Dashboard');
-        this.Tenants = this.constructApisForGroup('Tenants');
         
     }
 

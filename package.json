@@ -42,6 +42,7 @@
         "ngx-responsive": "^7.0.1",
         "node-sass": "^4.13.1",
         "rxjs": "~6.3.3",
+        "sigma": "^2.0.0-alpha32",
         "tslib": "^1.10.0",
         "zone.js": "~0.8.26"
     },

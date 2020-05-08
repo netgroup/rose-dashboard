@@ -30,13 +30,14 @@ export enum DeviceType {
 }
 
 export interface DeviceDescriptorInterface {
-    deviceid: string;
+    _id: string;
+    _key: string;
+    _rev: string;
+    ext_reachability: string;
+    ip_address: string;
     type: DeviceType;
-    name: string;
-    description: string;
-    connected: boolean;
-    enabled: boolean;
-    configured: boolean;
 }
 
-export interface DashboardDescriptorInterface {}
+export interface DashboardDescriptorInterface { }
+
+export interface TopologyDescriptorInterface { }

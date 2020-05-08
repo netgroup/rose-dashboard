@@ -1,0 +1,169 @@
+<div class="container-fluid">
+
+    <div  id="device-details"  class="row pt-8">
+
+        <div class="col-12 col-md-6 d-flex flex-row">
+            <label for="deviceId">{{ 'devices.details.fields.deviceId' | translate }}</label>
+            <span class="text">{{ (device.id !== null) ? device.id : "--"}}</span>
+        </div>
+        <div class="col-12 col-md-6 d-flex flex-row ">
+            <label for="name">{{ 'devices.details.fields.name' | translate }}</label>
+            <span class="text">{{ (device.name !== null) ? device.name : "--"}}</span>
+        </div>
+        <div class="col-12 col-md-6 d-flex flex-row ">
+            <label for="description">{{ 'devices.details.fields.description' | translate }}</label>
+            <span class="text">{{ (device.description !== null) ? device.description : "--"}}</span>
+        </div>
+        <div class="col-12 col-md-6 d-flex flex-row ">
+            <label for="type">{{ 'devices.details.fields.type' | translate }}</label>
+            <span class="text">{{ (device.type !== null ) ? device.type : "--"}}</span>
+        </div>
+        <div class="col-12 col-md-6 d-flex flex-row ">
+            <label for="natType">{{ 'devices.details.fields.natType' | translate }}</label>
+            <span class="text">{{ (device.natType !== null) ? device.natType : "--"}}</span>
+        </div>
+        <div class="col-12 col-md-6 d-flex flex-row ">
+            <label for="connected">{{ 'devices.details.fields.connected' | translate }}</label>
+            <span *ngIf="device.connected; else notConnectedBlock " class="text upper">{{ 'commons.yes' | translate }}</span>
+            <ng-template #notConnectedBlock><span class="text upper">{{ 'commons.no' | translate }}</span></ng-template>
+        </div>
+        <div class="col-12 col-md-6 d-flex flex-row ">
+            <label for="enabled">{{ 'devices.details.fields.enabled' | translate }}</label>
+            <span *ngIf="device.enabled; else notEnabledBlock " class="text upper">{{ 'commons.yes' | translate }}</span>
+            <ng-template #notEnabledBlock><span class="text upper">{{ 'commons.no' | translate }}</span></ng-template>
+        </div>
+        <div class="col-12 col-md-6 d-flex flex-row ">
+            <label for="configured">{{ 'devices.details.fields.configured' | translate }}</label>
+            <span *ngIf="device.configured; else notConfiguredBlock " class="text">{{ 'commons.yes' | translate }}</span>
+            <ng-template #notConfiguredBlock><span class="text">{{ 'commons.no' | translate }}</span></ng-template>
+        </div>
+        <div class="col-12 col-md-6 d-flex flex-row ">
+            <label for="registration_timestamp">{{ 'devices.details.fields.registration_timestamp' | translate }}</label>
+            <span class="text">{{ (device.registrationTimestamp !== null) ? device.registrationTimestamp : "--"}}</span>
+        </div>
+        <div class="col-12 col-md-6 d-flex flex-row ">
+            <label for="mgmtip">{{ 'devices.details.fields.mgmtip' | translate }}</label>
+            <span class="text">{{ (device.mgmtip !== null) ? device.mgmtip : "--"}}</span>
+        </div>
+
+
+
+    </div>
+    <br>
+    <div id="devices-interfaces" class="row">
+        <div class="col-12 col-md-6 d-flex flex-column">
+            <label>{{ 'devicesInterfaces.list.title' | translate }}</label>
+        </div>
+        <div class="col-12 px-0">
+            <table class="w-100 mw-100">
+                <thead>
+                    <tr *hideItBootstrap="['xs', 'sm']">
+                        <td>{{ 'devicesInterfaces.list.headers.name' | translate }}</td>
+                        <td>{{ 'devicesInterfaces.list.headers.mac_addr' | translate }}</td>
+                        <td>{{ 'devicesInterfaces.list.headers.ipv4_addrs' | translate }}</td>
+                        <td>{{ 'devicesInterfaces.list.headers.ipv6_addrs' | translate }}</td>
+                        <td>{{ 'devicesInterfaces.list.headers.ipv4_subnets' | translate }}</td>
+                        <td>{{ 'devicesInterfaces.list.headers.ipv6_subnets' | translate }}</td>
+                        <td>{{ 'devicesInterfaces.list.headers.ext_ipv4_addrs' | translate }}</td>
+                        <td>{{ 'devicesInterfaces.list.headers.ext_ipv6_addrs' | translate }}</td>
+                        <td>{{ 'devicesInterfaces.list.headers.type' | translate }}</td>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <ng-container *hideItBootstrap="['xs', 'sm']">
+                        <tr *ngFor="let devicesInterface of device.interfaces">
+                            <td>
+                                <span class="role d-inline-flex align-items-center">
+                                    <span class="text">{{ devicesInterface.name }}</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="role d-inline-flex align-items-center">
+                                    <span class="text">{{ devicesInterface.mac_addr }}</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="role d-inline-flex align-items-center">
+                                    <span class="text">{{ devicesInterface.ipv4_addrs }}</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="role d-inline-flex align-items-center">
+                                    <span class="text">{{ devicesInterface.ipv6_addrs }}</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="role d-inline-flex align-items-center">
+                                    <span class="text"><!-- {{ devicesInterface.ipv4_subnets.toString() }} --></span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="role d-inline-flex align-items-center">
+                                    <span class="text upper">{{ devicesInterface.ipv6_subnets.toString() }}</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="role d-inline-flex align-items-center">
+                                    <span class="text">{{ devicesInterface.ext_ipv4_addrs.toString() }}</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="role d-inline-flex align-items-center">
+                                    <span class="text">{{ devicesInterface.ext_ipv6_addrs.toString() }}</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="role d-inline-flex align-items-center">
+                                    <span class="text">{{ devicesInterface.type }}</span>
+                                </span>
+                            </td>
+                        </tr>
+                    </ng-container>
+
+                    <!--   <ng-container *showItBootstrap="['xs', 'sm']">
+                                        <tr *ngFor="let devicesInterface of instances">
+                                            <td class="d-flex flex-column">
+                                                <div class="d-flex">
+                                                    <div class="d-flex flex-column ml-3 overflow-hidden">
+                                                        <span class="text">{{ devicesInterface.id }}</span>
+                                                    </div>
+                                                </div>
+                
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span class="role d-inline-flex align-items-center">
+                
+                                                        <span class="dot"></span>
+                                                        <span class="text">{{ 'devicesInterface.types.' + devicesInterface.type | translate}}</span>
+                                                    </span>
+                                                </div>
+                
+                                                <table>
+                                                    <tr>
+                                                        <td class="px-0">
+                                                            <div class="d-flex justify-content-between align-items-center">
+                                                            <span class="d-inline-flex align-items-center">
+                                                            <app-button class="mt-0 pl-0"
+                                                                        [title]="'devicesInterfaces.list.actions.edit.short' | translate"
+                                                                        [type]="'clear'"
+                                                                        [routerLink]="['/devicesInterfaces', devicesInterface.id, 'edit']" >
+                                                            </app-button>
+                                                        </span>
+                                                                
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                
+                                            </td>
+                                        </tr>
+                                    </ng-container>
+                                     -->
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+
+</div>
