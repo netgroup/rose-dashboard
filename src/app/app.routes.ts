@@ -23,6 +23,9 @@ export const ApplicationRoutes: Routes = [{
         path: 'devices',
         loadChildren: '@rose/modules/devices/devices.module#DevicesModule'
     }, {
+        path: 'topology',
+        loadChildren: '@rose/modules/topology/topology.module#TopologiesModule'
+    }, {
         path: 'settings',
         component: MenuComponent,
         canActivate: [MobileGuard]

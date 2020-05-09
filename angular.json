@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "rose-backoffice": {
+        "rose-dashboard": {
             "root": "",
             "sourceRoot": "src",
             "projectType": "application",
@@ -17,7 +17,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/rose-backoffice",
+                        "outputPath": "dist/rose-dashboard",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
@@ -37,7 +37,9 @@
                             "node_modules/bootstrap/scss/bootstrap.scss",
                             "src/styles/index.scss"
                         ],
-                        "scripts": [],
+                        "scripts": [
+                            "node_modules/sigma/build/sigma.min.js"
+                        ],
                         "es5BrowserSupport": true
                     },
                     "configurations": {
@@ -95,24 +97,24 @@
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "options": {
-                        "browserTarget": "rose-backoffice:build"
+                        "browserTarget": "rose-dashboard:build"
                     },
                     "configurations": {
                         "production": {
-                            "browserTarget": "rose-backoffice:build:production"
+                            "browserTarget": "rose-dashboard:build:production"
                         },
                         "dev": {
-                            "browserTarget": "rose-backoffice:build:dev"
+                            "browserTarget": "rose-dashboard:build:dev"
                         },
                         "local": {
-                            "browserTarget": "rose-backoffice:build:local"
+                            "browserTarget": "rose-dashboard:build:local"
                         }
                     }
                 },
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "rose-backoffice:build"
+                        "browserTarget": "rose-dashboard:build"
                     }
                 },
                 "test": {
@@ -150,7 +152,7 @@
                 }
             }
         },
-        "rose-backoffice-e2e": {
+        "rose-dashboard-e2e": {
             "root": "e2e/",
             "projectType": "application",
             "prefix": "",
@@ -159,11 +161,11 @@
                     "builder": "@angular-devkit/build-angular:protractor",
                     "options": {
                         "protractorConfig": "./protractor.conf.js",
-                        "devServerTarget": "rose-backoffice:serve"
+                        "devServerTarget": "rose-dashboard:serve"
                     },
                     "configurations": {
                         "production": {
-                            "devServerTarget": "rose-backoffice:serve:production"
+                            "devServerTarget": "rose-dashboard:serve:production"
                         }
                     }
                 },
@@ -179,5 +181,5 @@
             }
         }
     },
-    "defaultProject": "rose-backoffice"
+    "defaultProject": "rose-dashboard"
 }

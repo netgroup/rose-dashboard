@@ -1,4 +1,4 @@
 export const environment = {
-    endpoint: 'https://rose-dev/api',
+    endpoint: 'http://0.0.0.0:8080',
     production: false
 };

@@ -10,7 +10,7 @@ import {TopologyDescriptorInterface} from '@configs/network/api.descriptors';
 
 
 @Injectable()
-export class TopologyService {
+export class TopologiesService {
     constructor(private API: ApiService) {
 
     }

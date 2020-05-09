@@ -1,16 +1,25 @@
-import {Routes} from '@angular/router';
-import {DetailsComponent} from '@modules/devices/components/details/details.component';
-import {DeviceResolver} from '@modules/devices/resolvers/devices.resolver';
-import {ListComponent} from '@modules/devices/components/list/list.component';
+import { Routes } from '@angular/router';
+import { ViewerComponent } from '@modules/topology/components/viewer/viewer.component';
 
-export const DevicesRoutes: Routes = [{
-    path: '',
-    pathMatch: 'full',
-    component: ListComponent    
-}, {
-    path: ':id',
-    component: DetailsComponent,
-    resolve: {
-        device: DeviceResolver
+
+export const TopologiesRoutes: Routes = [
+    /* {
+        path: '',
+        pathMatch: 'full',
+        component: ListComponent
+    }, {
+        path: ':id',
+        component: DetailsComponent,
+        resolve: {
+            //       topology: TopologyResolver
+        }
+    }, */
+    {
+        path: '',
+        pathMatch: 'full',
+        component: ViewerComponent,
+        resolve: {
+            //       topology: TopologyResolver
+        }
     }
-}];
+];

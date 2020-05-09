@@ -5,19 +5,19 @@ import {select, Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
 import {switchMap, take} from 'rxjs/operators';
 
-import {Device} from '@models/devices.model';
+import {Topology} from '@models/topologies.model';
 import {ApplicationState} from '@services/store/store.state';
-import {DevicesService} from '@modules/devices/devices.service';
+import {TopologiesService} from '@modules/topology/topology.service';
 
 @Injectable()
-export class DeviceResolver implements Resolve<Observable<Device>> {
+export class TopologyResolver implements Resolve<Observable<Topology>> {
     constructor(private store: Store<ApplicationState>,
-                private devices: DevicesService) {
+                private topologies: TopologiesService) {
 
     }
 
-    resolve(route: ActivatedRouteSnapshot): Observable<Device> {
-        const deviceIdentifier: string = route.paramMap.get('id');
+    resolve(route: ActivatedRouteSnapshot): Observable<Topology> {
+        const topologyIdentifier: string = route.paramMap.get('id');
 
         // FIXME fetch from ngrx store and from remote if it doesn't exists
         return this.store.pipe(
@@ -25,9 +25,9 @@ export class DeviceResolver implements Resolve<Observable<Device>> {
             select('user')
         ).pipe(
             take(1),
-            switchMap((device: Device) => {
-                // if (!user || user.id !== deviceIdentifier) {
-                    return this.devices.get(deviceIdentifier);
+            switchMap((topology: Topology) => {
+                // if (!user || user.id !== topologyIdentifier) {
+                    return this.topologies.get(topologyIdentifier);
                 // }
 
                 // return of(user);

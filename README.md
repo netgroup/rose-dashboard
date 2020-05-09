@@ -10,4 +10,7 @@
 ```text
 Welcome to ROSE dashboard
 ```
+build docker image
 
+
+docker build -t rose_be:0.1 . --no-cache

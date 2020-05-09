@@ -1,5 +1,5 @@
 {
-    "name": "rose-backoffice",
+    "name": "rose-dashboard",
     "version": "0.0.0",
     "scripts": {
         "ng": "ng",

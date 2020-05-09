@@ -7,14 +7,11 @@ import {AngularSvgIconModule} from 'angular-svg-icon';
 import {EveryUPModule} from '@everyup/everyup.module';
 
 import {SharedModule} from '@modules/shared/shared.module';
-import {ListComponent} from '@modules/devices/components/list/list.component';
-import {DetailsComponent} from '@modules/devices/components/details/details.component';
-import {DevicesRoutes} from '@modules/devices/devices.routes';
-import {DevicesService} from '@modules/devices/devices.service';
-import {DeviceResolver} from '@modules/devices/resolvers/devices.resolver';
-import {FiltersComponent} from '@modules/devices/components/list/filters/filters.component';
-
+import {TopologiesRoutes} from '@modules/topology/topology.routes';
 import { FormsModule } from '@angular/forms';
+import { TopologyResolver } from '@modules/topology/resolvers/topology.resolver';
+import { TopologiesService } from '@modules/topology/topology.service';
+import { ViewerComponent } from '@modules/topology/components/viewer/viewer.component';
 
 @NgModule({
     imports: [
@@ -22,20 +19,18 @@ import { FormsModule } from '@angular/forms';
         NgbModule,
         EveryUPModule,
         TranslateModule,
-        RouterModule.forChild(DevicesRoutes),
+        RouterModule.forChild(TopologiesRoutes),
         AngularSvgIconModule,
         FormsModule
     ],
     providers: [
-        DeviceResolver,
-        DevicesService
+        TopologyResolver,
+        TopologiesService
     ],
     declarations: [
-        ListComponent,
-        DetailsComponent,
-        FiltersComponent,
+        ViewerComponent
     ]
 })
-export class DevicesModule {
+export class TopologiesModule {
 
 }
