@@ -34,16 +34,6 @@ export class TopologyviewerComponent implements OnInit, AfterViewInit {
             iterations: 1,
             radius: 10
         },
-        forceX: {
-            enabled: false,
-            strength: .1,
-            x: .5
-        },
-        forceY: {
-            enabled: false,
-            strength: .1,
-            y: .5
-        },
         link: {
             enabled: true,
             distance: 50,
@@ -97,7 +87,7 @@ export class TopologyviewerComponent implements OnInit, AfterViewInit {
     }
 
     private draw(): void {
-        console.log('drawww')
+
         const self = this;
         const rect = this.chart_container.nativeElement.getBoundingClientRect();
 
@@ -150,7 +140,7 @@ export class TopologyviewerComponent implements OnInit, AfterViewInit {
                 .id((d: any) => d.id)
                 .distance(self.forceProperties.link.distance)
                 .iterations(self.forceProperties.link.iterations)
-                .links(self.forceProperties.link.enabled ? self.graph.links : []));
+                .links(self.graph.links));
 
             // updates ignored until this is run
             // restarts the simulation (important if simulation has already slowed down)
@@ -172,9 +162,14 @@ export class TopologyviewerComponent implements OnInit, AfterViewInit {
             // set the data and properties of node circles
             nodeSvg = self.svg.append('g')
                 .attr('class', 'nodes')
-                .selectAll('circle')
+                .selectAll('g')
                 .data(self.graph.nodes)
-                .enter().append('circle')
+                .enter().append('g');
+
+            let circles = nodeSvg.append('circle')
+                .attr('r', self.forceProperties.collide.radius)
+                .attr('stroke', 'black')
+                .attr('stroke-width', 1.5)
                 .style('fill', (d: any) => {
                     if (d.type === 'customer_host') {
                         return 'brown';
@@ -191,34 +186,11 @@ export class TopologyviewerComponent implements OnInit, AfterViewInit {
                     .on('drag', dragged)
                     .on('end', dragended));
 
-            // node tooltip
-            nodeSvg.append('svg:text')
-                .attr('class', 'node_text cleanable')
-                .attr('dy', function (d) {
-                        return '-5';
-                })
-                .attr('pointer-events', 'none')
-                .style('font-size', '14px')
-                .style('font-family', 'Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif')
-                .style('fill', function (d) {
-                    return 'black';
-                })
-                .text((d: any) => d.id);
+            let lables = nodeSvg.append('text')
+                .text( (d: any) => d._key)
+                .attr('x', 15)
+                .attr('y', 3);
 
-
-            updateDisplay();
-        }
-
-        // update the display based on the forces (but not positions)
-        function updateDisplay() {
-            nodeSvg
-                .attr('r', self.forceProperties.collide.radius)
-                .attr('stroke', 'black')
-                .attr('stroke-width', Math.abs(self.forceProperties.charge.strength) / 15);
-
-            linkSvg
-                .attr('stroke-width', self.forceProperties.link.enabled ? 1 : 0)
-                .attr('opacity', self.forceProperties.link.enabled ? 1 : 0);
         }
 
         // update the display positions after each simulation tick
@@ -230,8 +202,9 @@ export class TopologyviewerComponent implements OnInit, AfterViewInit {
                 .attr('y2', (d: any) => d.target.y);
 
             nodeSvg
-                .attr('cx', (d: any) => d.x)
-                .attr('cy', (d: any) => d.y);
+                .attr('transform', (d: any) => {
+                    return 'translate(' + d.x + ',' + d.y + ')';
+                });
 
         }
 
