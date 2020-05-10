@@ -156,7 +156,7 @@ export class TopologyviewerComponent implements OnInit, AfterViewInit {
                 .selectAll('line')
                 .data(self.graph.links)
                 .enter().append('line')
-                .style('stroke-width', 1.5)
+                .style('stroke-width', 0.5)
                 .style('stroke', 'black');
 
             // set the data and properties of node circles
@@ -169,14 +169,14 @@ export class TopologyviewerComponent implements OnInit, AfterViewInit {
             let circles = nodeSvg.append('circle')
                 .attr('r', self.forceProperties.collide.radius)
                 .attr('stroke', 'black')
-                .attr('stroke-width', 1.5)
+                .attr('stroke-width', 0.5)
                 .style('fill', (d: any) => {
                     if (d.type === 'customer_host') {
-                        return 'brown';
+                        return '#e9c46a';
                     } else if (d.type === 'provider_host') {
-                        return 'grey';
+                        return '#2a9d8f';
                     } else if (d.type === 'router') {
-                        return 'blue';
+                        return '#264653';
                     } else { // unknow
                         return 'green';
                     }
@@ -188,6 +188,10 @@ export class TopologyviewerComponent implements OnInit, AfterViewInit {
 
             let lables = nodeSvg.append('text')
                 .text( (d: any) => d._key)
+                .style('fill', 'black')
+                .attr('pointer-events', 'none')
+                .style('font-size', '15px')
+                .style('font-family', 'Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif')
                 .attr('x', 15)
                 .attr('y', 3);
 
