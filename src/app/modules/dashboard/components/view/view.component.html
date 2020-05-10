@@ -8,7 +8,7 @@
                         <div class="description-stats">
                             <span class="mdi mdi-router-network ">
                                 <span *ngIf="dashboard.devices">{{dashboard.devices.total }}</span>
-                                <span *ngIf="dashboard.devices.total === undefined"> -- </span>
+                                <span *ngIf="dashboard.devices === undefined || dashboard.devices.total === undefined"> -- </span>
                             </span>
                         </div>
                     </div>
@@ -22,7 +22,7 @@
                         <div class="description-stats">
                             <span class="mdi mdi-router-network ">
                                 <span *ngIf="dashboard.devices">{{dashboard.devices.customer_host }}</span>
-                                <span *ngIf="dashboard.devices.customer_host === undefined"> -- </span>
+                                <span *ngIf="dashboard.devices === undefined || dashboard.devices.customer_host === undefined"> -- </span>
                             </span>
                         </div>
                     </div>
@@ -36,7 +36,7 @@
                         <div class="description-stats">
                             <span class="mdi mdi-router-network ">
                                 <span *ngIf="dashboard.devices">{{dashboard.devices.provider_host }}</span>
-                                <span *ngIf="dashboard.devices.provider_host === undefined"> -- </span>
+                                <span *ngIf="dashboard.devices === undefined || dashboard.devices.provider_host === undefined"> -- </span>
                             </span>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                         <div class="description-stats">
                             <span class="mdi mdi-router-network ">
                                 <span *ngIf="dashboard.devices">{{dashboard.devices.router }}</span>
-                                <span *ngIf="dashboard.devices.router === undefined"> -- </span>
+                                <span *ngIf="dashboard.devices === undefined || dashboard.devices.router === undefined"> -- </span>
                             </span>
                         </div>
                     </div>
@@ -58,10 +58,6 @@
 
         </div>
         <div class="row">
-
-
         </div>
-
-
     </div> 
 </div>

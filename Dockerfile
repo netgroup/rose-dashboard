@@ -19,8 +19,7 @@ RUN npm run build
 
 FROM nginx:1.18.0
 
-RUN apt-get update && apt-get -y install git make libcurl4-gnutls-dev \
-    libgnutls28-dev debhelper apt-utils dh-make
+RUN apt-get update 
 
 # Removing nginx default page.
 RUN rm -rf /usr/share/nginx/html/*
