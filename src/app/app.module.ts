@@ -9,6 +9,7 @@ import {ResponsiveModule} from 'ngx-responsive';
 import {StoreModule} from '@ngrx/store';
 import {AngularSvgIconModule} from 'angular-svg-icon';
 
+
 import {EveryUPModule} from '@everyup/everyup.module';
 
 import {AppComponent} from '@rose/app.component';
@@ -26,6 +27,7 @@ import {StorageService} from '@services/storage/storage.service';
 import {TitleService} from '@services/title.service';
 import { BreadcrumbComponent } from '@rose/components/header/breadcrumb/breadcrumb.component';
 import { BreadcrumbService } from './services/breadcrumb.service';
+
 
 @NgModule({
     declarations: [

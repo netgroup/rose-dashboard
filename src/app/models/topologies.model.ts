@@ -1,8 +1,8 @@
 
 
 export class Topology {
-    id: string;
-    
+    links: [];
+    nodes: [];
     defineExtraProperties() {
         
     }

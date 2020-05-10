@@ -7,6 +7,7 @@ import { DevicesLanguagePartialDefinition } from '@configs/translations/it/devic
 import { DashboardLanguagePartialDefinition } from '@configs/translations/it/dashboard.translations';
 
 import { MobileMenuLanguagePartialDefinition } from '@configs/translations/it/mobileMenu.translations';
+import { TopologyLanguagePartialDefinition } from '@configs/translations//it/topoogy.translations';
 
 export const LanguageDefinition = {
     commons: CommonsLanguagePartialDefinition,
@@ -15,6 +16,7 @@ export const LanguageDefinition = {
     auth: AuthenticationLanguagePartialDefinition,
     operators: OperatorsLanguagePartialDefinition,
     devices: DevicesLanguagePartialDefinition,
+    topology: TopologyLanguagePartialDefinition,
     dashboard: DashboardLanguagePartialDefinition,
     mobileMenu: MobileMenuLanguagePartialDefinition,
 

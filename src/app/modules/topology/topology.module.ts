@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { TopologyResolver } from '@modules/topology/resolvers/topology.resolver';
 import { TopologiesService } from '@modules/topology/topology.service';
 import { ViewerComponent } from '@modules/topology/components/viewer/viewer.component';
+import { TopologyviewerComponent } from './components/topologyviewer/topologyviewer.component';
 
 @NgModule({
     imports: [
@@ -28,6 +29,7 @@ import { ViewerComponent } from '@modules/topology/components/viewer/viewer.comp
         TopologiesService
     ],
     declarations: [
+        TopologyviewerComponent,
         ViewerComponent
     ]
 })

@@ -22,8 +22,8 @@ export class TopologyFactory {
 
     static createFromDescriptor(descriptor: TopologyDescriptorInterface): Topology {
         const duplicateKeys = {
-            id: 'deviceid',
-
+            links: 'links',
+            nodes: 'nodes'
         };
 
         const instance: Topology = new Topology();

@@ -18,11 +18,11 @@
             <div class="panel col-12 col-md-4 col-xl pl-4 mb-3">
                 <div class="item">
                     <div class="description">
-                        <div>{{ 'dashboard.view.panel.devices.connected' | translate }}</div>
+                        <div>{{ 'dashboard.view.panel.devices.customer_host' | translate }}</div>
                         <div class="description-stats">
                             <span class="mdi mdi-router-network ">
-                                <span *ngIf="dashboard.devices">{{dashboard.devices.connected }}</span>
-                                <span *ngIf="dashboard.devices.connected === undefined"> -- </span>
+                                <span *ngIf="dashboard.devices">{{dashboard.devices.customer_host }}</span>
+                                <span *ngIf="dashboard.devices.customer_host === undefined"> -- </span>
                             </span>
                         </div>
                     </div>
@@ -32,11 +32,24 @@
             <div class="panel col-12 col-md-4 col-xl pl-4 mb-3">
                 <div class="item">
                     <div class="description">
-                        <div>{{ 'dashboard.view.panel.devices.enabled' | translate }}</div>
+                        <div>{{ 'dashboard.view.panel.devices.provider_host' | translate }}</div>
                         <div class="description-stats">
                             <span class="mdi mdi-router-network ">
-                                <span *ngIf="dashboard.devices">{{dashboard.devices.enabled }}</span>
-                                <span *ngIf="dashboard.devices.enabled === undefined"> -- </span>
+                                <span *ngIf="dashboard.devices">{{dashboard.devices.provider_host }}</span>
+                                <span *ngIf="dashboard.devices.provider_host === undefined"> -- </span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel col-12 col-md-4 col-xl pl-4 mb-3">
+                <div class="item">
+                    <div class="description">
+                        <div>{{ 'dashboard.view.panel.devices.router' | translate }}</div>
+                        <div class="description-stats">
+                            <span class="mdi mdi-router-network ">
+                                <span *ngIf="dashboard.devices">{{dashboard.devices.router }}</span>
+                                <span *ngIf="dashboard.devices.router === undefined"> -- </span>
                             </span>
                         </div>
                     </div>

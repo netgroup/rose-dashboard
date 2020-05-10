@@ -5,9 +5,10 @@ export const DashboardLanguagePartialDefinition = {
                 total: 'Registered Users'
             },
             devices: {
-                total: 'Devices',
+                total: 'Total Devices',
                 router: 'Router',
-                host: 'Host',
+                customer_host: 'Customer Host',
+                provider_host: 'Provider Host',
             },
 
         },
