@@ -31,4 +31,8 @@ export class MenuComponent implements OnInit {
             this.router.url.slice(0, queryParamsIndex);
         return baseUrl === url;
     }
+
+    onOpenExternalLink(link) {
+        window.open(link);
+    }
 }

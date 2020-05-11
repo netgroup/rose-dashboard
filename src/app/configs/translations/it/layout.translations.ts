@@ -9,5 +9,10 @@ export const LayoutLanguagePartialDefinition = {
         topology: 'Topology view',
         signout: 'Logout',
         settings: 'Menu'
+    },
+    footer: {
+        github: 'GitHub',
+        slack: 'Slack',
+        version: 'V.'
     }
 };
