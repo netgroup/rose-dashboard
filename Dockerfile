@@ -31,6 +31,9 @@ COPY /nginx/nginx.conf /etc/nginx/conf.d/default.conf
 # Copying Angular artifacts into web server root.
 COPY --from=0 /usr/src/rose-dashboard/dist/rose-dashboard /usr/share/nginx/html
 
+# Remove rose-dashboard source and node_modules
+RUN rm -rf /usr/src/rose-dashboard/
+
 # Exposing ports.
 EXPOSE 80
 
