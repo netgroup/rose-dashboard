@@ -8,7 +8,6 @@ import {EveryUPModule} from '@everyup/everyup.module';
 
 import {SharedModule} from '@modules/shared/shared.module';
 import {ListComponent} from '@modules/devices/components/list/list.component';
-import {DetailsComponent} from '@modules/devices/components/details/details.component';
 import {DevicesRoutes} from '@modules/devices/devices.routes';
 import {DevicesService} from '@modules/devices/devices.service';
 import {DeviceResolver} from '@modules/devices/resolvers/devices.resolver';
@@ -32,7 +31,6 @@ import { FormsModule } from '@angular/forms';
     ],
     declarations: [
         ListComponent,
-        DetailsComponent,
         FiltersComponent,
     ]
 })

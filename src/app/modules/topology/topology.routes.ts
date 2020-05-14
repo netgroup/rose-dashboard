@@ -4,17 +4,7 @@ import { TopologyResolver } from './resolvers/topology.resolver';
 
 
 export const TopologiesRoutes: Routes = [
-    /* {
-        path: '',
-        pathMatch: 'full',
-        component: ListComponent
-    }, {
-        path: ':id',
-        component: DetailsComponent,
-        resolve: {
-            //       topology: TopologyResolver
-        }
-    }, */
+
     {
         path: '',
         pathMatch: 'full',

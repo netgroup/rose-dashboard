@@ -1,5 +1,6 @@
 # ROSE dashboard
 
+![Build CI](https://github.com/netgroup/rose-dashboard/workflows/Build%20CI/badge.svg)
 
 <!--- example of figure
       always put the link to the img source (e.g. gslide):
@@ -10,6 +11,8 @@
 ```text
 Welcome to ROSE dashboard
 ```
+
+
 build docker image
 
       docker build -t rose-dashboard:beta . --no-cache

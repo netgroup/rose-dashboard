@@ -19,8 +19,8 @@ import { BreadcrumbService } from '@rose/services/breadcrumb.service';
     styleUrls: ['./viewer.component.scss']
 })
 export class ViewerComponent implements OnInit {
-
-    constructor(private topology: TopologiesService,
+    topology: any;
+    constructor(private topologyService: TopologiesService,
                 private notifications: NotificationsService,
                 private translator: TranslateService,
                 private router: Router,
