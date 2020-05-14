@@ -25,6 +25,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: npm install
-      run: npm ci
-    - name: ANguilar build for production
+      run: npm install
+    - name: Angular build for production
       run: ng build
