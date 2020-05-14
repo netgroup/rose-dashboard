@@ -27,6 +27,6 @@ jobs:
     - name: npm install angular-cli
       run: npm install angular-cli
     - name: npm install
-      run: npm install
+      run: npm install --dev
     - name: Angular build for production
       run: ng build
