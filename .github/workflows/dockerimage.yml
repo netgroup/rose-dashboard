@@ -1,0 +1,34 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  docker-build-push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        name: Check out code
+      
+      - name: Build Docker image
+        if: ${{ github.event_name == 'pull_request'}}
+        uses: zvfvrv/docker-bpgpr@v1.0.1
+        with:
+          gh_token: ${{ secrets.TOKEN_GITHUB }}
+          image_name: rose-dashboard
+          tags: latest,beta
+          tag_with_sha: true
+          push: false
+
+      - name: Build and Publish Docker image
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master'}}
+        uses: zvfvrv/docker-bpgpr@v1.0.1
+        with:
+          gh_token: ${{ secrets.TOKEN_GITHUB }}
+          image_name: rose-dashboard
+          tags: latest,beta
+          tag_with_sha: true
+          push: true
