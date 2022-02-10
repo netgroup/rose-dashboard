@@ -39,7 +39,7 @@
         "ngx-international-phone-number": "^1.0.6",
         "ngx-moment": "^3.5.0",
         "ngx-responsive": "^7.0.1",
-        "node-sass": "^4.14.1",
+        "node-sass": "^7.0.0",
         "rxjs": "~6.3.3",
         "tslib": "^1.11.2",
         "zone.js": "~0.8.26"
