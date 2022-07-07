@@ -33,7 +33,7 @@
         "d3": "^5.16.0",
         "google-libphonenumber": "^3.2.9",
         "leaflet": "^1.6.0",
-        "moment": "^2.25.3",
+        "moment": "^2.29.4",
         "ngx-color": "^4.1.1",
         "ngx-infinite-scroll": "^7.2.0",
         "ngx-international-phone-number": "^1.0.6",
